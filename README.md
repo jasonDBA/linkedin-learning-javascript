@@ -15,3 +15,40 @@ NOTE: The below, both are only for external JS script
 * __Global Scope__:
 * __Local Scope__:
 
+## 6 Primitive Data Types
+* Numeric
+* String
+* Boolean
+* Null
+* Undefined
+* Symbol
+
+## Given var a = 5, var b = "4". What is the result of (a + b)?
+* Answer: The sum is still 9 (NOT 54). Even though variable b is string data type, JS is aware of the operator + and it assumes the user is trying to add two numbers.
+```
+var a = 5;
+var b = "4";
+var sum = a + b;
+
+console.log(sum); // 9
+```
+
+## What is difference between == and ===?
+* ==: it __ignores__ the comparison of two data types.
+* ===: it compares not only values but also data types. Absolute String Equality.
+```
+//Example
+var a = 5;
+var b = "5";
+var compareTwo;
+
+if(a == b) {
+  compareTwo = true;
+} else {
+  compareTwo = false;
+}
+
+console.log(compareTwo) // returns true
+
+// if we change if(a==b) to if(a===b), then it returns false since a and b are different data types (a is integer, b is string).
+```
