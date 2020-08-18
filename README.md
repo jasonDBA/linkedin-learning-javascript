@@ -57,9 +57,12 @@ console.log(compareTwo) // returns true
 ```
 // Example
 var a = 5, b = 7;
+
 var findBiggerNum = function() {
   var result;
   a>b ? result = ["a", a] : result = ["b", b];
   console.log(result);
 }
+
+findBiggerNum();  // returns ["b", 7]
 ```
