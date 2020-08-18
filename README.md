@@ -52,3 +52,14 @@ console.log(compareTwo) // returns true
 
 // if we change if(a==b) to if(a===b), then it returns false since a and b are different data types (a is integer, b is string).
 ```
+## Anonymous Function
+* A function that does not have a name. It is stored in variables.
+```
+// Example
+var a = 5, b = 7;
+var findBiggerNum = function() {
+  var result;
+  a>b ? result = ["a", a] : result = ["b", b];
+  console.log(result);
+}
+```
