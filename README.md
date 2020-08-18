@@ -4,8 +4,8 @@ Reference: https://www.linkedin.com/learning/javascript-essential-training-3?trk
 
 ## How JS loads?
 NOTE: The below, both are only for external JS script
-* Asynchronous: it specifies that the script will be executed **asynchronously** as soon as it is available.
-* Deferred : it makes the browser **wait(parse)** until the document is loaded before running the JavaScript
+* __Asynchronous__: it specifies that the script will be executed **asynchronously** as soon as it is available.
+* __Deferred__ : it makes the browser **wait(parse)** until the document is loaded before running the JavaScript
 ```
 <script src="" async></script>
 <script src="" defer></script>
