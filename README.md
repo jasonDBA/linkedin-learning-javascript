@@ -24,13 +24,13 @@ NOTE: The below, both are only for external JS script
 * Symbol
 
 ## Given var a = 5, var b = "4". What is the result of (a + b)?
-* Answer: The sum is still 9 (NOT 54). Even though variable b is string data type, JS is aware of the operator + and it assumes the user is trying to add two numbers.
+* Answer: The sum is 54 (NOT 9). Since the variable b is string data type, JS uses __string operator__ to add two values.
 ```
 var a = 5;
 var b = "4";
 var sum = a + b;
 
-console.log(sum); // 9
+console.log(sum); // 54
 ```
 
 ## What is difference between == and ===?
