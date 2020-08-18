@@ -11,3 +11,7 @@ NOTE: The below, both are only for external JS script
 <script src="" defer></script>
 ```
 
+## Variable Scope in Js
+* __Global Scope__:
+* __Local Scope__:
+
