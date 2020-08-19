@@ -66,3 +66,88 @@ var findBiggerNum = function() {
 
 findBiggerNum();  // returns ["b", 7]
 ```
+
+## What if not using var prefix?
+* Answer: the variable will be a global scope even if it is defined inside of the block like a loop
+
+## Difference between var, let, and const?
+* var: The variable can be re-defined. Also, it can re-assign the value.
+* const: The variable can __NOT__ be re-defined. Also, it can __NOT__ re-assign the value.
+* let: It is the __block scope__ keyword. It can be applied in the __smaller scope__ than var.
+```
+function example() {
+  var number = 5;
+  
+  if(number) {
+    var number = 10;
+    console.log("number: ", number);  // returns number: 10
+  }
+  
+  console.log("number: ", number);  // returns number: 10
+}
+
+// If changing var number = 10 to let number = 10, then the first console returns 10 and the second returns 5 (NOT 10).
+```
+
+## Create an object having 'view' property, and increase the view by 1.
+* Answer:
+```
+var obj = {
+  view: 0,
+  updateView: function() {
+    return ++obj.view;
+  }
+}
+console.log("view: ", obj.view);  // returns view: 0
+obj.updateView();
+console.log("view: ", obj.view);  // returns view: 1
+}
+```
+
+## What is this keyword?
+* It refers to the object it belongs to.
+
+## Create an object constructor, which is Course(title, instructor, view)
+* Answer:
+```
+function Course(title, instructor, view){
+  this.title = title;
+  this.instructor = instructor;
+  this.view = view;
+  this.updateView = function() {
+    return ++this.view;
+  }
+}
+
+var course01 = new Course("JavaScript Fundamental", "Jason Choi", 0);
+
+console.log(course01);  // returns the object, Course{title: "JavaScript Fundamental", instructor: "Jason Choi", view: 0}
+console.log(course01.updateView()); // returns 1
+}
+```
+
+## Name two object property notations
+* DOT notation
+* Bracket notation
+* If the object property involves special characters, recommend using __Bracket__ notation else recommend using __DOT__ notation as it is easier to read.
+
+## What is Function Closure?
+* A function having access to the parent scope, __even after the parent function has closed__.
+```
+// Example
+function giveMeEms(px) {
+  var baseValue = 16;
+  
+  function doMath() {
+    return px / baseValue;
+  }
+  
+  return doMath;
+}
+
+var smallSize = giveMeEms(12);
+var largeSize = giveMeEms(24);
+
+console.log("Small size: ", smallSize)  // returns Small size: 0.75
+console.log("Large size: ", largeSize)  // returns Large size: 1.5
+```
