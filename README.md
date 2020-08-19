@@ -151,3 +151,11 @@ var largeSize = giveMeEms(24);
 console.log("Small size: ", smallSize)  // returns Small size: 0.75
 console.log("Large size: ", largeSize)  // returns Large size: 1.5
 ```
+
+## DOM and BOM
+* DOM: It defines a standard for accessing documents. The model looks a tree-structure of the nodes.
+* BOM: It allows JavaScript to "talk to" the browser.
+
+## DOM Methods
+* .querySelector(): returns the first element that matches a specified CSS selector(s) in the document.
+* .querySelectorAll(): returns all elements in the document that matches a specified CSS selector(s).
