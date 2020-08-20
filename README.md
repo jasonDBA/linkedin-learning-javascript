@@ -159,3 +159,46 @@ console.log("Large size: ", largeSize)  // returns Large size: 1.5
 ## DOM Methods
 * .querySelector(): returns the first element that matches a specified CSS selector(s) in the document.
 * .querySelectorAll(): returns all elements in the document that matches a specified CSS selector(s).
+
+## How to create new DOM elements?
+1. Create the element - Use .createElement()
+2. Create the text node that goes inside the element  - Use .createTextNode()
+3. Add the text node to the element - Use .appendChild()
+4. Add the element to the DOM tree
+```
+/******** Example ********/
+/******** HTML Before applying JS ********/
+<figure class="featured-image">
+  <img src="images/testimonials/bluepebble.jpg" alt="Earthrise: A photograph of the Earth and parts of the Moon's surface taken by astronaut William Anders in 1968, during the Apollo 8 mission.">
+</figure>
+```
+```
+/******** JS ********/
+const FEAGURE = document.querySelector(".featured-image");
+const THEIMAGE = FEAGURE.querySelector("img");
+var altText = THEIMAGE.getAttribute("alt");
+
+// Create the element - Use .createElement()
+var captionElement = document.createElement("figcaption");
+
+// Create the text node that goes inside the element - Use .createTextNode()
+var captionText = document.createTextNode(altText);
+
+// Add the text node to the element - Use .appendChild()
+captionElement.appendChild(captionText);
+// console.log(captionElement);
+
+// Add the element to the DOM tree
+FEAGURE.appendChild(captionElement);
+
+THEIMAGE.setAttribute("alt", "");
+```
+```
+/******** HTML After applying JS ********/
+<figure class="featured-image">
+  <img src="images/testimonials/bluepebble.jpg" alt>
+  <figcaption>
+    Earthrise: A photograph of the Earth and parts of the Moon's surface taken by astronaut William Anders in 1968, during the Apollo 8 mission.
+  </figcaption>
+</figure>
+```
