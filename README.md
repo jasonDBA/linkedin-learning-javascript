@@ -206,3 +206,4 @@ THEIMAGE.setAttribute("alt", "");
 ## What is the difference between querySelector() and getElementsByClassName()?
 * You can use querySelector() when you look for **elements with a combination of properties**
 * You can use getElementsByClassName() if you expect **faster performance**.
+* For example, it is possbile like querySelector('input[name="login"]'); but getElementsByClassName() cannot.
