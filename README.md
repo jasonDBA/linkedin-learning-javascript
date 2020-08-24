@@ -202,3 +202,7 @@ THEIMAGE.setAttribute("alt", "");
   </figcaption>
 </figure>
 ```
+
+## What is the difference between querySelector() and getElementsByClassName()?
+* You can use querySelector() when you look for **elements with a combination of properties**
+* You can use getElementsByClassName() if you expect **faster performance**.
