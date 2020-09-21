@@ -6,7 +6,7 @@ Reference: https://www.linkedin.com/learning/javascript-essential-training-3?trk
 NOTE: The below, both are only for external JS script
 * __Asynchronous__: it specifies that the script will be executed **asynchronously** as soon as it is available.
 * __Deferred__ : it makes the browser **wait(parse)** until the document is loaded before running the JavaScript
-```
+```javascript
 <script src="" async></script>
 <script src="" defer></script>
 ```
@@ -25,7 +25,7 @@ NOTE: The below, both are only for external JS script
 
 ## Given var a = 5, var b = "4". What is the result of (a + b)?
 * Answer: The sum is 54 (NOT 9). Since the variable b is string data type, JS uses __string operator__ to add two values.
-```
+```javascript
 var a = 5;
 var b = "4";
 var sum = a + b;
@@ -36,7 +36,7 @@ console.log(sum); // 54
 ## What is difference between == and ===?
 * ==: it __ignores__ the comparison of two data types.
 * ===: it compares not only values but also data types. Absolute String Equality.
-```
+```javascript
 //Example
 var a = 5;
 var b = "5";
@@ -54,7 +54,7 @@ console.log(compareTwo) // returns true
 ```
 ## Anonymous Function
 * A function that does not have a name. It is stored in variables.
-```
+```javascript
 // Example
 var a = 5, b = 7;
 
@@ -74,7 +74,7 @@ findBiggerNum();  // returns ["b", 7]
 * var: The variable can be re-defined. Also, it can re-assign the value.
 * const: The variable can __NOT__ be re-defined. Also, it can __NOT__ re-assign the value.
 * let: It is the __block scope__ keyword. It can be applied in the __smaller scope__ than var.
-```
+```javascript
 function example() {
   var number = 5;
   
@@ -91,7 +91,7 @@ function example() {
 
 ## Create an object having 'view' property, and increase the view by 1.
 * Answer:
-```
+```javascript
 var obj = {
   view: 0,
   updateView: function() {
@@ -109,7 +109,7 @@ console.log("view: ", obj.view);  // returns view: 1
 
 ## Create an object constructor, which is Course(title, instructor, view)
 * Answer:
-```
+```javascript
 function Course(title, instructor, view){
   this.title = title;
   this.instructor = instructor;
@@ -133,7 +133,7 @@ console.log(course01.updateView()); // returns 1
 
 ## What is Function Closure?
 * A function having access to the parent scope, __even after the parent function has closed__.
-```
+```javascript
 // Example
 function giveMeEms(px) {
   var baseValue = 16;
@@ -165,14 +165,14 @@ console.log("Large size: ", largeSize)  // returns Large size: 1.5
 2. Create the text node that goes inside the element  - Use .createTextNode()
 3. Add the text node to the element - Use .appendChild()
 4. Add the element to the DOM tree
-```
+```javascript
 /******** Example ********/
 /******** HTML Before applying JS ********/
 <figure class="featured-image">
   <img src="images/testimonials/bluepebble.jpg" alt="Earthrise: A photograph of the Earth and parts of the Moon's surface taken by astronaut William Anders in 1968, during the Apollo 8 mission.">
 </figure>
 ```
-```
+```javascript
 /******** JS ********/
 const FEAGURE = document.querySelector(".featured-image");
 const THEIMAGE = FEAGURE.querySelector("img");
@@ -193,7 +193,7 @@ FEAGURE.appendChild(captionElement);
 
 THEIMAGE.setAttribute("alt", "");
 ```
-```
+```javascript
 /******** HTML After applying JS ********/
 <figure class="featured-image">
   <img src="images/testimonials/bluepebble.jpg" alt>
@@ -212,10 +212,24 @@ THEIMAGE.setAttribute("alt", "");
 * __A reference data type__.
 * Defined as an unordered collection of related data, of primitive or reference types, in the form of __“key: value” pairs__.
 * Example:
-```
+```javascript
 let school = {
     name : "Vivekananda School",
     location : "Delhi",
     established : "1971"
 }
+```
+
+## Global and local variables
+* Global: it can be defined anywhere in your JavaScript code.
+* Local: it will be visible only within a function where it is defined.
+* Tricky Coding Example:
+```javascript
+var gl = 123;
+function changeVar(){
+    gl = 456;
+}
+
+changeVar();
+console.log("gl: " + gl);   // result: gl: 456 (NOT 123)
 ```
