@@ -226,10 +226,22 @@ let school = {
 * Tricky Coding Example:
 ```javascript
 var gl = 123;
+
 function changeVar(){
-    gl = 456;
+  gl = 456;
 }
 
 changeVar();
 console.log("gl: " + gl);   // result: gl: 456 (NOT 123)
+```
+```javascript
+var gl = 123;
+
+function changeVar(){
+  var gl = 456;   // By using var, js knows it is a local variable
+}
+
+changeVar();
+console.log("gl: " + gl);   // result: gl: 123 (NOT 456)
+
 ```
